@@ -14,46 +14,84 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SMS Classifier"
+            android:textSize="20dp"
+            android:layout_marginTop="@dimen/vertical_margin_8dp"
+            android:textColor="@color/black_custom"
+            android:fontFamily="@font/segeo_ui_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/description_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masukan Pesan Singkat"
+            android:textColor="@color/text_color"
+            android:textSize="14dp"
+            android:fontFamily="@font/segeo_ui"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/vertical_margin_4dp"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/vertical_margin_16dp"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.266"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25">
-
+            app:layout_constraintTop_toBottomOf="@id/description_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="250dp"
+                android:background="@drawable/bg_input"
+                android:gravity="start"
+                android:fontFamily="@font/segeo_ui"
+                android:scrollbars="vertical"
+                android:textSize="12dp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/delete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/shape_transparent"
+            android:layout_marginTop="@dimen/vertical_margin_16dp"
+            android:layout_marginRight="@dimen/vertical_margin_8dp"
+            android:background="@drawable/secondary_btn"
+            android:outlineSpotShadowColor="@color/black_custom"
+            android:outlineAmbientShadowColor="@color/black_custom"
             android:onClick="@{() -> homeFragment.clear()}"
             android:text="DELETE"
-            android:textColor="@color/black"
+            android:fontFamily="@font/segeo_ui_bold"
+            android:textColor="@color/black_custom"
             app:layout_constraintEnd_toStartOf="@id/submit"
             app:layout_constraintStart_toStartOf="@id/layout_input"
             app:layout_constraintTop_toBottomOf="@id/layout_input" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/submit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_margin="16dp"
-            android:text="VALIDATE"
+            android:layout_marginTop="@dimen/vertical_margin_16dp"
+            android:layout_marginLeft="@dimen/vertical_margin_8dp"
+            android:text="SUBMIT"
+            android:fontFamily="@font/segeo_ui_bold"
+            android:textColor="@color/white"
+            app:cornerRadius="16dp"
+            android:background="@drawable/primary_btn"
             android:onClick="@{() -> homeFragment.submit()}"
             app:layout_constraintTop_toBottomOf="@id/layout_input"
             app:layout_constraintStart_toEndOf="@id/delete"

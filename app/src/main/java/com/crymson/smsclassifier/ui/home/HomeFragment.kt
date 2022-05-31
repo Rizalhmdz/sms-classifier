@@ -9,11 +9,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.crymson.smsclassifier.databinding.FragmentHomeBinding
 import android.app.ProgressDialog
+import android.os.Build
 import android.text.TextUtils
 import android.view.View.GONE
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.crymson.smsclassifier.Classifier
+import com.crymson.smsclassifier.MainActivity
+import com.crymson.smsclassifier.R
+import com.crymson.smsclassifier.databinding.AppBarMainBinding
 import org.tensorflow.lite.Interpreter
 
 class HomeFragment : Fragment() {
