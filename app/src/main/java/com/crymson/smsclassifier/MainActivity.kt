@@ -28,10 +28,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
@@ -40,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.prediction, R.id.user_manual, R.id.info
             ), drawerLayout
         )
 
@@ -49,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.appBarMain.toolbar.setNavigationIcon(R.drawable.ic_nav_drawer)
 
         navController.addOnDestinationChangedListener{ _, destination, _ ->
-            if (destination.id == R.id.nav_home){
+            if (destination.id == R.id.prediction){
                 binding.appBarMain.toolbar.setNavigationIcon(R.drawable.ic_nav_drawer)
             }
             else{

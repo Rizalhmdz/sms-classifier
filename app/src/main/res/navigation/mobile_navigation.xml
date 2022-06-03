@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/prediction">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/prediction"
         android:name="com.crymson.smsclassifier.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Prediksi"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/user_manual"
         android:name="com.crymson.smsclassifier.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Manual Penggunaan"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/info"
         android:name="com.crymson.smsclassifier.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Info"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

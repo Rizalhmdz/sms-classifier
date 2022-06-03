@@ -12,5 +12,6 @@
     <color name="bg_on_nightmode">#191919</color>
     <color name="primary_btn">?attr/colorPrimary</color>
     <color name="secondary_btn">?attr/colorOnPrimary</color>
+    <color name="bg_input">@color/black_custom</color>
     <color name="action_bar_color">@color/bg_on_nightmode</color>
 </resources>
